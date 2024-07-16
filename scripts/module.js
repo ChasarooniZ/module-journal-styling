@@ -59,7 +59,7 @@ Hooks.once("init", async function () {
             }),
           },
           {
-            action: "maji-box-text-narrative",
+            action: "maji-float-block",
             class: "maji-float-block",
             title: "Float Block",
             mark: menu.schema.nodes.aside,

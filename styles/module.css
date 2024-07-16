@@ -736,7 +736,7 @@
     min-height: 80px;
     padding-left: 100px;
     color: white;
-    background: var(--maji-green);
+    background: var(--maji-green-dark);
     background-size: cover;
     border-bottom: 2px solid black;
     border-radius: 40px 6px 0 40px;
