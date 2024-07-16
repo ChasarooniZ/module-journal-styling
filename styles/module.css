@@ -1043,9 +1043,10 @@
   .maji.journal-sheet header.adventure-header,
   .maji.adventure header.adventure-header {
     margin: 0;
-    background: url("./assets/border-left.webp"), url("./assets/border-right.webp"), url("./assets/border-top.webp"), url("./assets/border-bottom.webp"), url("./assets/bg-rust-no-pad.webp");
+    /*background: url("./assets/border-left.webp"), url("./assets/border-right.webp"), url("./assets/border-top.webp"), url("./assets/border-bottom.webp"), url("./assets/bg-rust-no-pad.webp");
     background-repeat: no-repeat, no-repeat, repeat-x, repeat-x, repeat-x;
-    background-position: left, right, top, bottom, center;
+    background-position: left, right, top, bottom, center;*/
+    background: var(--maji-brown);
     line-height: 5.25rem;
     border: none;
     text-align: center;
@@ -1074,7 +1075,9 @@
   .maji.journal-sheet.adventure-importer section.window-content,
   .maji.adventure.adventure-importer section.window-content {
     color: black;
-    background: url("./assets/parchment-maji.jpg") repeat;
+    /*background: url("./assets/parchment-maji.jpg") repeat;*/
+    background-color: #f0f0e0;
+    background: maj;
     border: unset;
   }
   .maji.journal-sheet.journal-sheet:not(.minimized),
