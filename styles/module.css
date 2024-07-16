@@ -1075,9 +1075,8 @@
   .maji.journal-sheet.adventure-importer section.window-content,
   .maji.adventure.adventure-importer section.window-content {
     color: black;
-    /*background: url("./assets/parchment-maji.jpg") repeat;*/
-    background-color: #f0f0e0;
-    background: maj;
+    background: url("./assets/parchment-maji.jpg") repeat;
+    /*background-color: #f0f0e0;*/
     border: unset;
   }
   .maji.journal-sheet.journal-sheet:not(.minimized),
