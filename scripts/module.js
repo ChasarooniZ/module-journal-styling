@@ -17,7 +17,7 @@ Hooks.once("init", async function () {
       html[0].classList.add(CONFIG.cssClass);
   });
 
-  Hooks.on("getSidebarTabJournalContext", (_html, options, journal) => {
+  Hooks.on("getSidebarTabFolderContext", (_html, options, journal) => {
     options.push({
       condition: true,
       icon: "",
