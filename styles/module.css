@@ -576,7 +576,7 @@
     min-height: 80px;
     padding-left: 100px;
     color: white;
-    background: url(./assets/green-back.webp);
+    background: var(--maji-green-dark)
     background-size: cover;
     border-bottom: 2px solid black;
     border-radius: 40px 6px 0 40px;
@@ -736,7 +736,7 @@
     min-height: 80px;
     padding-left: 100px;
     color: white;
-    background: url(./assets/green-back-light.webp);
+    background: var(--maji-green);
     background-size: cover;
     border-bottom: 2px solid black;
     border-radius: 40px 6px 0 40px;
@@ -804,7 +804,7 @@
     min-height: 80px;
     padding-left: 100px;
     color: white;
-    background: url(./assets/red-back-light.webp);
+    background: var(--maji-brown);
     background-size: cover;
     border-bottom: 2px solid black;
     border-radius: 40px 6px 0 40px;
