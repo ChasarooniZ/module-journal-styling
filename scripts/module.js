@@ -1,5 +1,5 @@
 const CONFIG = {
-  moduleId: "module-journal-styling",
+  moduleId: "maji-module-journal-styling",
   journalFlag: "majiJournal",
   cssClass: "maji",
 };
