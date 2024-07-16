@@ -53,10 +53,13 @@ Hooks.once("init", async function () {
             title: "Box Text, Narrative",
             mark: menu.schema.nodes.paragraph,
             attrs: { _preserve: { class: "box-text narrative" } },
-            priority: 1,
-            cmd: toggleMark(menu.schema.nodes.paragraph, {
-              _preserve: { class: "box-text narrative" },
-            }),
+            priority: 0,
+            cmd: () => {
+              menu._toggleTextBlock(menu.schema.nodes.paragraph, {
+                attrs: { _preserve: { class: "box-text narrative" } },
+              });
+              return true;
+            },
           },
           {
             action: "maji-float-block",
@@ -64,10 +67,13 @@ Hooks.once("init", async function () {
             title: "Float Block",
             mark: menu.schema.nodes.aside,
             attrs: { _preserve: { class: "maji-float-block" } },
-            priority: 1,
-            cmd: toggleMark(menu.schema.nodes.aside, {
-              _preserve: { class: "maji-float-block" },
-            }),
+            priority: 0,
+            cmd: () => {
+              menu._toggleTextBlock(menu.schema.nodes.aside, {
+                attrs: { _preserve: { class: "maji-float-block" } },
+              });
+              return true;
+            },
           },
           {
             action: "pf2e-inline-header",
