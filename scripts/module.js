@@ -76,6 +76,30 @@ Hooks.once("init", async function () {
             },
           },
           {
+            action: "maji-treasure-box",
+            class: "maji-treasure-box",
+            title: "Treasure",
+            attrs: { _preserve: { class: "box-text treasure" } },
+            priority: 0,
+            cmd: () => {
+              const html = `<section class="box-text treasure">
+              <header>
+                  <img src="icons/containers/chest/chest-elm-steel-brown.webp" width="100">
+                  <h2>Treasure</h2>
+                  <p>@UUID[Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz]{Gold Pieces  (20)}</p>
+              </header>
+              <article>
+                  <p>Text</p>
+              </article>
+          </section>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
+              return true;
+            },
+          },
+          {
             action: "pf2e-inline-header",
             class: "inline-header",
             title: "Inline Header",
