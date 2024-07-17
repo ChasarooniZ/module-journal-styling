@@ -50,27 +50,13 @@ Hooks.once("init", async function () {
           {
             action: "maji-box-text-narrative",
             class: "box-text narrative",
-            title: "Box Text, Narrative",
+            title: "Narrative",
             mark: menu.schema.nodes.paragraph,
             attrs: { _preserve: { class: "box-text narrative" } },
             priority: 0,
             cmd: () => {
               menu._toggleTextBlock(menu.schema.nodes.paragraph, {
                 attrs: { _preserve: { class: "box-text narrative" } },
-              });
-              return true;
-            },
-          },
-          {
-            action: "maji-float-block",
-            class: "maji-float-block",
-            title: "Float Block",
-            mark: menu.schema.nodes.aside,
-            attrs: { _preserve: { class: "maji-float-block" } },
-            priority: 0,
-            cmd: () => {
-              menu._toggleTextBlock(menu.schema.nodes.aside, {
-                attrs: { _preserve: { class: "maji-float-block" } },
               });
               return true;
             },
@@ -97,19 +83,9 @@ Hooks.once("init", async function () {
             },
           },
           {
-            action: "maji-test",
-            class: "maji-test",
-            title: "test",
-            attrs: { _preserve: { class: "maji-test" } },
-            priority: 0,
-            cmd: () => {
-              console.log({ menu: menu.view.state.selection.content() });
-            },
-          },
-          {
             action: "maji-investigation",
             class: "maji-investigation",
-            title: "Investigation Box Text",
+            title: "Investigation 🔍",
             attrs: { _preserve: { class: "box-text investigation" } },
             priority: 0,
             cmd: () => {
@@ -134,7 +110,7 @@ Hooks.once("init", async function () {
           {
             action: "maji-encounter",
             class: "maji-encounter",
-            title: "Encounter Box Text",
+            title: "Encounter ⚔",
             attrs: { _preserve: { class: "box-text encounter" } },
             priority: 0,
             cmd: () => {
@@ -166,31 +142,7 @@ Hooks.once("init", async function () {
           {
             action: "maji-treasure-box",
             class: "maji-treasure-box",
-            title: "Treasure Box Text",
-            attrs: { _preserve: { class: "maji-treasure-box" } },
-            priority: 0,
-            cmd: () => {
-              const html = `<section class="box-text treasure">
-              <header>
-                  <img src="icons/containers/chest/chest-elm-steel-brown.webp" width="100">
-                  <h2>Treasure</h2>
-                  <p>@UUID[Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz]{Gold Pieces  (20)}</p>
-              </header>
-              <article>
-                  <p></p>
-              </article>
-          </section>`;
-              const data = ProseMirror.dom.parseString(html, menu.schema);
-              menu.view.dispatch(
-                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
-              );
-              return true;
-            },
-          },
-          {
-            action: "maji-treasure-box",
-            class: "maji-treasure-box",
-            title: "Treasure Box Text",
+            title: "Treasure 🥇",
             attrs: { _preserve: { class: "maji-treasure-box" } },
             priority: 0,
             cmd: () => {
@@ -214,7 +166,7 @@ Hooks.once("init", async function () {
           {
             action: "maji-macro-box",
             class: "maji-macro-box",
-            title: "Macro Box Text",
+            title: "Macro 🎲",
             attrs: { _preserve: { class: "box-text fvtt" } },
             priority: 0,
             cmd: () => {
@@ -238,7 +190,7 @@ Hooks.once("init", async function () {
           {
             action: "maji-float-box",
             class: "maji-float-box",
-            title: "Float Box",
+            title: "Float Box ☁",
             attrs: { _preserve: { class: "maji-float-box" } },
             priority: 0,
             cmd: () => {
@@ -256,7 +208,7 @@ Hooks.once("init", async function () {
           {
             action: "maji-figure-right",
             class: "maji-figure-right",
-            title: "Figure Right",
+            title: 'Figure Right <i class="fa-solid fa-right-to-bracket"></i>',
             attrs: { _preserve: { class: "maji-figure-right" } },
             priority: 0,
             cmd: () => {
