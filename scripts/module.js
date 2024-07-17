@@ -76,20 +76,84 @@ Hooks.once("init", async function () {
             },
           },
           {
-            action: "maji-treasure-box",
-            class: "maji-treasure-box",
-            title: "Treasure",
-            attrs: { _preserve: { class: "box-text treasure" } },
+            action: "maji-compartment",
+            class: "maji-compartment",
+            title: "Compartment",
+            attrs: { _preserve: { class: "maji-compartment" } },
             priority: 0,
             cmd: () => {
-              const html = `<section class="box-text treasure">
+              const html = `<section class="compartment">
+              <article class="full">
+                  <h2>Title</h2>
+                  <p></p>
+              </article>
+          </section>
+          `;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
+              return true;
+            },
+          },
+          {
+            action: "maji-test",
+            class: "maji-test",
+            title: "test",
+            attrs: { _preserve: { class: "maji-test" } },
+            priority: 0,
+            cmd: () => {
+              console.log({ menu: menu.view.state.selection.content() });
+            },
+          },
+          {
+            action: "maji-investigation",
+            class: "maji-investigation",
+            title: "Investigation Box Text",
+            attrs: { _preserve: { class: "box-text investigation" } },
+            priority: 0,
+            cmd: () => {
+              const html = `<section class="box-text investigation">
               <header>
-                  <img src="icons/containers/chest/chest-elm-steel-brown.webp" width="100">
-                  <h2>Treasure</h2>
-                  <p>@UUID[Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz]{Gold Pieces  (20)}</p>
+                  <img src="icons/tools/scribal/magnifying-glass.webp" width="100">
+                  <h2>Exploration</h2>
+                  <p>@Compendium[pf2e.actionspf2e.TiNDYUGlMmxzxBYU]{Search} @UUID[Compendium.pf2e.actionspf2e.Item.EwgTZBWsc8qKaViP]{Investigate}</p>
               </header>
               <article>
-                  <p>Text</p>
+                  <p></p>
+              </article>
+          </section>
+          `;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
+              return true;
+            },
+          },
+          {
+            action: "maji-encounter",
+            class: "maji-encounter",
+            title: "Encounter Box Text",
+            attrs: { _preserve: { class: "box-text encounter" } },
+            priority: 0,
+            cmd: () => {
+              const html = `<section class="box-text encounter">
+              <header>
+                  <img src="icons/commodities/bones/skull-hollow-white.webp" width="100">
+                  <section>
+                      <h2>Encounter</h2>
+                      <h2>Low 3</h2>
+                  </section>
+                  <section>
+                      <div>
+                          <p>@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.r9w1n85mp9Ip4QiS]{Kobold Warrior}</p>
+                      </div>
+                      <p>60 XP</p>
+                  </section>
+              </header>
+              <article>
+                  <p></p>
               </article>
           </section>`;
               const data = ProseMirror.dom.parseString(html, menu.schema);
@@ -100,99 +164,112 @@ Hooks.once("init", async function () {
             },
           },
           {
-            action: "pf2e-inline-header",
-            class: "inline-header",
-            title: "Inline Header",
-            node: menu.schema.nodes.heading,
-            attrs: { _preserve: { class: "inline-header" }, level: 4 },
+            action: "maji-treasure-box",
+            class: "maji-treasure-box",
+            title: "Treasure Box Text",
+            attrs: { _preserve: { class: "maji-treasure-box" } },
             priority: 0,
             cmd: () => {
-              menu._toggleTextBlock(menu.schema.nodes.heading, {
-                attrs: { _preserve: { class: "inline-header" }, level: 4 },
-              });
+              const html = `<section class="box-text treasure">
+              <header>
+                  <img src="icons/containers/chest/chest-elm-steel-brown.webp" width="100">
+                  <h2>Treasure</h2>
+                  <p>@UUID[Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz]{Gold Pieces  (20)}</p>
+              </header>
+              <article>
+                  <p></p>
+              </article>
+          </section>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
               return true;
             },
           },
           {
-            action: "pf2e-info-block",
-            class: "info",
-            title: "Info Block",
-            node: menu.schema.nodes.section,
-            attrs: { _preserve: { class: "info" } },
-            priority: 1,
+            action: "maji-treasure-box",
+            class: "maji-treasure-box",
+            title: "Treasure Box Text",
+            attrs: { _preserve: { class: "maji-treasure-box" } },
+            priority: 0,
             cmd: () => {
-              menu._toggleBlock(menu.schema.nodes.section, wrapIn, {
-                attrs: { _preserve: { class: "info" } },
-              });
+              const html = `<section class="box-text treasure">
+              <header>
+                  <img src="icons/containers/chest/chest-elm-steel-brown.webp" width="100">
+                  <h2>Treasure</h2>
+                  <p>@UUID[Compendium.pf2e.equipment-srd.Item.B6B7tBWJSqOBz5zz]{Gold Pieces  (20)}</p>
+              </header>
+              <article>
+                  <p></p>
+              </article>
+          </section>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
               return true;
             },
           },
           {
-            action: "pf2e-stat-block",
-            class: "statblock",
-            title: "Stat Block",
-            node: menu.schema.nodes.section,
-            attrs: { _preserve: { class: "statblock" } },
-            priority: 1,
+            action: "maji-macro-box",
+            class: "maji-macro-box",
+            title: "Macro Box Text",
+            attrs: { _preserve: { class: "box-text fvtt" } },
+            priority: 0,
             cmd: () => {
-              menu._toggleBlock(menu.schema.nodes.section, wrapIn, {
-                attrs: { _preserve: { class: "statblock" } },
-              });
+              const html = `<section class="box-text fvtt">
+              <header>
+                  <img src="icons/vtt-512.png" width="100">
+                  <h2>Macro</h2>
+                  <p>@UUID[Compendium.pf2e.pf2e-macros.Macro.mxHKWibjPrgfJTDg]{Earn Income}</p>
+              </header>
+              <article>
+                  <p></p>
+              </article>
+          </section>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
               return true;
             },
           },
           {
-            action: "pf2e-traits",
-            class: "traits",
-            title: "Trait",
-            node: menu.schema.nodes.section,
-            attrs: { _preserve: { class: "traits" } },
-            priority: 1,
+            action: "maji-float-box",
+            class: "maji-float-box",
+            title: "Float Box",
+            attrs: { _preserve: { class: "maji-float-box" } },
+            priority: 0,
             cmd: () => {
-              menu._toggleBlock(menu.schema.nodes.section, wrapIn, {
-                attrs: { _preserve: { class: "traits" } },
-              });
+              const html = `<aside class="maji-float-block">
+              <h3>Title</h3>
+              <p>Text</p>
+          </aside>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
               return true;
             },
           },
           {
-            action: "pf2e-written-note",
-            class: "message",
-            title: "Written Note",
-            node: menu.schema.nodes.paragraph,
-            attrs: { _preserve: { class: "message" } },
-            priority: 1,
+            action: "maji-figure-right",
+            class: "maji-figure-right",
+            title: "Figure Right",
+            attrs: { _preserve: { class: "maji-figure-right" } },
+            priority: 0,
             cmd: () => {
-              menu._toggleTextBlock(menu.schema.nodes.paragraph, {
-                attrs: { _preserve: { class: "message" } },
-              });
+              const html = `<figure class="right">
+              <img src="icons/equipment/wrist/bracer-banded-leather-pink-gold.webp" width="200">
+              <figcaption>@UUID[Compendium.pf2e.equipment-srd.Item.BKdzb8hu3kZtKH3Z]{Bracelet of Dashing}</figcaption>
+   </figure>`;
+              const data = ProseMirror.dom.parseString(html, menu.schema);
+              menu.view.dispatch(
+                menu.view.state.tr.replaceSelectionWith(data).scrollIntoView()
+              );
               return true;
             },
-          },
-          {
-            action: "pf2e-gm-text-block",
-            class: "visibility-gm",
-            title: "GM Text Block",
-            node: menu.schema.nodes.div,
-            attrs: { _preserve: { "data-visibility": "gm" } },
-            priority: 1,
-            cmd: () => {
-              menu._toggleBlock(menu.schema.nodes.div, wrapIn, {
-                attrs: { _preserve: { "data-visibility": "gm" } },
-              });
-              return true;
-            },
-          },
-          {
-            action: "pf2e-gm-text-inline",
-            class: "visibility-gm",
-            title: "GM Text Inline",
-            mark: menu.schema.marks.span,
-            attrs: { _preserve: { "data-visibility": "gm" } },
-            priority: 1,
-            cmd: toggleMark(menu.schema.marks.span, {
-              _preserve: { "data-visibility": "gm" },
-            }),
           },
         ],
       });
