@@ -42,7 +42,7 @@ Hooks.once("init", async function () {
   Hooks.on("getProseMirrorMenuDropDowns", proseMirrorMenu);
 
   Hooks.on("getJournalSheetHeaderButtons", (sheet, menu) => {
-    menu.push({
+    menu.unshift({
       class: "toggle-maji",
       icon: "fas fa-user-tie",
       label: "Toggle Maji",
