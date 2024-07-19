@@ -50,7 +50,7 @@ Hooks.once("init", async function () {
         sheet.document.setFlag(
           CONFIG.moduleId,
           CONFIG.journalFlag,
-          sheet.document.getFlag(CONFIG.moduleId, CONFIG.journalFlag)
+          !sheet.document.getFlag(CONFIG.moduleId, CONFIG.journalFlag)
         );
       },
     });
