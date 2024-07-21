@@ -1167,7 +1167,7 @@
   }
   .maji.journal-sheet aside.sidebar.flexcol.directory.journal-sidebar:not(.collapsed) .active .page-number,
   .maji.adventure aside.sidebar.flexcol.directory.journal-sidebar:not(.collapsed) .active .page-number {
-    background: url(/modules/pf2e-abomination-vaults/styles/assets/pointer.webp) no-repeat center;
+    background: url(/modules/fist-of-the-ruby-phoenix-unnofficial/assets/style/pointer.webp) no-repeat center;
     background-size: 60%;
   }
   .maji.journal-sheet aside.sidebar.flexcol.directory.journal-sidebar:not(.collapsed) .active + .active .page-number,
