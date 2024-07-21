@@ -34,13 +34,14 @@ Hooks.once("init", async function () {
   });
 
   Hooks.on("renderJournalPageSheet", (app, html, data) => {
-    if (game.modules.get("pf2e-dorako-ui")?.active) {
-      html[0].classList.add("premium");
-      html.closest(".app").find(".journal-entry-content").addClass("premium");
-    }
     const journal = app.document.parent;
-    if (journal.getFlag(CONFIG.moduleId, CONFIG.journalFlag))
+    if (journal.getFlag(CONFIG.moduleId, CONFIG.journalFlag)) {
       html[0].classList.add(CONFIG.cssClass);
+      if (game.modules.get("pf2e-dorako-ui")?.active) {
+        html[0].classList.add("premium");
+        html.closest(".app").find(".journal-entry-content").addClass("premium");
+      }
+    }
   });
 
   Hooks.on("getProseMirrorMenuDropDowns", proseMirrorMenu);
