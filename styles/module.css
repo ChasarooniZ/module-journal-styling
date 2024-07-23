@@ -1073,6 +1073,7 @@
   .maji.journal-sheet.journal-entry-page section.window-content,
   .maji.adventure.journal-entry-page section.window-content,
   .maji.journal-sheet.adventure-importer section.window-content,
+  .journal-sheet.maji .journal-page-content
   .maji.adventure.adventure-importer section.window-content {
     color: black;
     background: url("./assets/parchment-maji.jpg") repeat;
