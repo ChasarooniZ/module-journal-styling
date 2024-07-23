@@ -1125,6 +1125,9 @@
   .maji.adventure aside.sidebar.flexcol.directory.journal-sidebar ol.directory-list li.directory-item {
     border: unset;
   }
+  .maji.journal-sheet .sheet.journal-entry .pages-list .directory-item {
+    display: block;
+  }
   .maji.journal-sheet aside.sidebar.flexcol.directory.journal-sidebar ol.directory-list li.directory-item:not(:first-child).level1::before,
   .maji.adventure aside.sidebar.flexcol.directory.journal-sidebar ol.directory-list li.directory-item:not(:first-child).level1::before {
     content: "";
