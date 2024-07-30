@@ -1,6 +1,6 @@
 {
-  "id": "maji-module-journal-styling",
-  "title": "Maji: Module Journal Styling",
+  "id": "mojo",
+  "title": "MoJo: Module Journal Styling",
   "description": "Stylling for module journals like in official PF2e Modules",
   "version": "#{VERSION}#",
   "compatibility": {
@@ -10,7 +10,10 @@
   "authors": [
     {
       "name": "ChasarooniZ"
-    }
+    },
+   {
+     "name": "volfied"
+   }
   ],
   "relationships": {
     "systems": [],
