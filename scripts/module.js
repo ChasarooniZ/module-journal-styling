@@ -1,7 +1,7 @@
 const CONFIG = {
-  moduleId: "maji-module-journal-styling",
-  journalFlag: "majiJournal",
-  cssClass: "maji",
+  moduleId: "mojo-module-journal-styling",
+  journalFlag: "mojoJournal",
+  cssClass: "mojo",
 };
 Hooks.once("init", async function () {
   Hooks.on("renderJournalSheet", (app, html, data) => {
@@ -48,9 +48,9 @@ Hooks.once("init", async function () {
 
   Hooks.on("getJournalSheetHeaderButtons", (sheet, menu) => {
     menu.unshift({
-      class: "toggle-maji",
+      class: "toggle-mojo",
       icon: "fas fa-user-tie",
-      label: "Toggle Maji",
+      label: "Toggle Mojo",
       onclick: (_ev) => {
         sheet.document.setFlag(
           CONFIG.moduleId,
@@ -69,11 +69,11 @@ function proseMirrorMenu(menu, dropdowns) {
   const wrapIn = foundry.prosemirror.commands.wrapIn;
   if ("format" in dropdowns) {
     dropdowns.format.entries.push({
-      action: "maji-journal-style",
-      title: "Maji",
+      action: "mojo-journal-style",
+      title: "Mojo",
       children: [
         {
-          action: "maji-box-text-narrative",
+          action: "mojo-box-text-narrative",
           class: "box-text narrative",
           title: 'Narrative <i class="fa-regular fa-comment"></i>',
           mark: menu.schema.nodes.paragraph,
@@ -87,10 +87,10 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-compartment",
-          class: "maji-compartment",
+          action: "mojo-compartment",
+          class: "mojo-compartment",
           title: 'Compartment <i class="fa-regular fa-rectangle-list"></i>',
-          attrs: { _preserve: { class: "maji-compartment" } },
+          attrs: { _preserve: { class: "mojo-compartment" } },
           priority: 0,
           cmd: () => {
             const html = `<section class="compartment">
@@ -108,8 +108,8 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-investigation",
-          class: "maji-investigation",
+          action: "mojo-investigation",
+          class: "mojo-investigation",
           title: 'Investigation <i class="fa-solid fa-magnifying-glass"></i>',
           attrs: { _preserve: { class: "box-text investigation" } },
           priority: 0,
@@ -133,8 +133,8 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-encounter",
-          class: "maji-encounter",
+          action: "mojo-encounter",
+          class: "mojo-encounter",
           title: 'Encounter <i class="fa-solid fa-skull"></i>',
           attrs: { _preserve: { class: "box-text encounter" } },
           priority: 0,
@@ -165,10 +165,10 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-treasure-box",
-          class: "maji-treasure-box",
+          action: "mojo-treasure-box",
+          class: "mojo-treasure-box",
           title: 'Treasure <i class="fa-solid fa-coins"></i>',
-          attrs: { _preserve: { class: "maji-treasure-box" } },
+          attrs: { _preserve: { class: "mojo-treasure-box" } },
           priority: 0,
           cmd: () => {
             const html = `<section class="box-text treasure">
@@ -189,8 +189,8 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-macro-box",
-          class: "maji-macro-box",
+          action: "mojo-macro-box",
+          class: "mojo-macro-box",
           title: 'Macro <i class="fa-solid fa-dice-d20"></i>',
           attrs: { _preserve: { class: "box-text fvtt" } },
           priority: 0,
@@ -213,13 +213,13 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-float-box",
-          class: "maji-float-box",
+          action: "mojo-float-box",
+          class: "mojo-float-box",
           title: 'Float Box <i class="fa-regular fa-square"></i>',
-          attrs: { _preserve: { class: "maji-float-box" } },
+          attrs: { _preserve: { class: "mojo-float-box" } },
           priority: 0,
           cmd: () => {
-            const html = `<aside class="maji-float-block">
+            const html = `<aside class="mojo-float-block">
             <h3>Title</h3>
             <p>Text</p>
         </aside>`;
@@ -231,10 +231,10 @@ function proseMirrorMenu(menu, dropdowns) {
           },
         },
         {
-          action: "maji-figure-right",
-          class: "maji-figure-right",
+          action: "mojo-figure-right",
+          class: "mojo-figure-right",
           title: 'Figure Right <i class="fa-solid fa-right-to-bracket"></i>',
-          attrs: { _preserve: { class: "maji-figure-right" } },
+          attrs: { _preserve: { class: "mojo-figure-right" } },
           priority: 0,
           cmd: () => {
             const html = `<figure class="right">
