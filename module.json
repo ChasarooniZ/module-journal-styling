@@ -1,6 +1,6 @@
 {
-  "id": "mojo-module-journal-styling",
-  "title": "Mojo: Module Journal Styling",
+  "id": "mojo",
+  "title": "MoJo: Module Journal Styling",
   "description": "Styling for module journals like in official PF2e Modules",
   "version": "#{VERSION}#",
   "compatibility": {
@@ -11,9 +11,9 @@
     {
       "name": "ChasarooniZ"
     },
-    {
-      "name": "Volfied"
-    }
+   {
+     "name": "volfied"
+   }
   ],
   "relationships": {
     "systems": [],
